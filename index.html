@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang=“en”>
+<head>
+  <meta charset=“utf-8">
+  <meta name=“viewport” content=“width=device-width, initial-scale=1">
+  <title>National Parks Directory HomePage</title>
+  <link rel=“stylesheet” href=“//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css”>
+  <link rel=“stylesheet” href=“/resources/demos/style.css”>
+  <style>
+    fieldset {
+      border: 0;
+    }
+    label {
+      display: block;
+      margin: 30px 0 0 0;
+    }
+    .overflow {
+      height: 200px;
+    }
+  </style>
+  <script src=“https://code.jquery.com/ui/1.11.4/jquery-ui.min.js” integrity=“sha256-xNjb53/rY+WmG+4L6tTl9m6PpqknWZvRt0rO1SRnJzw=” crossorigin=“anonymous”></script>
+  <script>
+  $( function() {
+    $( “#speed” ).selectmenu();
+    $( “#files” ).selectmenu();
+    $( “#number” )
+      .selectmenu()
+      .selectmenu( “menuWidget” )
+        .addClass( “overflow” );
+    $( “#salutation” ).selectmenu();
+  } );
+  </script>
+</head>
+<body>
+ <h1>Which National Park would you like to visit?</h1>
+<div class=“demo”>
+<form action=“#”>
+  <fieldset>
+    <label for=“speed”>Select a national Park</label>
+    <select name=“speed” id=“speed”>
+      <option>placeholder</option>
+      <option>placeholder</option>
+      <option selected=“selected”>placeholder</option>
+      <option>placeholder</option>
+      <option>placeholder</option>
+    </select>
+   
+  </fieldset>
+</form>
+</div>
+</body>
+</html>
