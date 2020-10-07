@@ -28,15 +28,14 @@ var parkCode=localStorage.getItem("park");
     $(".parkImg").append(imgTag);
     $(".caption").text(response.data[0].images[0].altText);
 
-
-
-    
-  
-
-
     
    });
 
+   var weatherPage = $("#weather-page")
+
+weatherPage.click(function(e){
+location.href="weather.html";
+})
 
 //local storage function 
 
