@@ -10,8 +10,14 @@
  
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-          <h1 class="display-4">Current Weather</h1>
-          <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+           <h1 class = "parkName"></h1> 
+          <h2 class="display-4">Current Weather</h2>
+          <ul class="list-group list-group-flush">
+            <li id="temp"></li>
+            <li id="humidity"></li>
+      
+            </ul>
+            <div> Place Holder for IMG</div>
         </div>
       </div>
 
@@ -22,53 +28,53 @@
               Date
           </div>
               <ul class="list-group list-group-flush">
-              <li class="temp-one">Temp</li>
-              <li class="hum-one">Humidity</li>
+              <li id="temp-one"></li>
+              <li id="hum-one"></li>
         
               </ul>
               <div> Place Holder for IMG</div>
           </div>
     
           <div class="col-sm" style="width: 18rem;">
-          <div class="card-one-header">
+          <div class="card-two-header">
               Date
               </div>
               <ul class="list-group list-group-flush">
-              <li class="temp-one">Temp</li>
-              <li class="hum-one">Humidity</li>
+              <li id="temp-two"></li>
+              <li id="hum-two"></li>
         
               </ul>
               <div> Place Holder for IMG</div>
           </div>
           <div class="col-sm" style="width: 18rem;">
-              <div class="card-one-header">
+              <div class="card-three-header">
               Date
               </div>
               <ul class="list-group list-group-flush">
-              <li class="temp-one">Temp</li>
-              <li class="hum-one">Humidity</li>
+              <li id="temp-three"></li>
+              <li id="hum-three"></li>
         
               </ul>
               <div> Place Holder for IMG</div>
           </div>
           <div class="col-sm" style="width: 18rem;">
-              <div class="card-one-header">
+              <div class="card-four-header">
               Date
               </div>
               <ul class="list-group list-group-flush">
-              <li class="temp-one">Temp</li>
-              <li class="hum-one">Humidity</li>
+              <li id="temp-four"></li>
+              <li id="hum-four"></li>
         
               </ul>
               <div> Place Holder for IMG</div>
           </div>
           <div class="col-sm" style="width: 18rem;">
-              <div class="card-one-header">
+              <div class="card-five-header">
               Date
               </div>
               <ul class="list-group list-group-flush">
-              <li class="temp-one">Temp</li>
-              <li class="hum-one">Humidity</li>
+              <li id="temp-five"></li>
+              <li id="hum-five"></li>
         
               </ul>
               <div> Place Holder for IMG</div>
@@ -82,9 +88,84 @@
 
 
 
-
+  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>git
 <script>
 $( "#head" ).css({ background: "#ccc", color: "blue" });
+
+
+var apiKey = "2260dff7a76d693fefd23eeb30c6e079";
+   var  nationalPark = prompt("Type in a city?");
+    console.log(nationalPark);
+    
+        var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + nationalPark + "&appid=" + apiKey;
+        
+    // this is the api call for the current day
+
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+      }).then(function(response) {
+        console.log(response);
+        var temp = (response.main.temp);
+        var farenHeit = parseInt((temp - 273.15) * 1.80 + 32);
+        $(".parkName").text("Yellow Stone");
+        $("#temp").text("Temperature : " + farenHeit);
+        var humidity = response.main.humidity;
+        $("#humidity").text("Humidity : " + humidity);
+
+
+        
+      });
+
+    //   the five day forecast
+    var queryURL2 = "https://api.openweathermap.org/data/2.5/forecast?q=" + nationalPark + "&appid=" + apiKey;
+    $.ajax({
+        url: queryURL2,
+        method: "GET"
+      }).then(function(response) {
+        console.log(response);
+
+        // first day forecast
+        var temp1 = (response.list[6].main.temp);
+        var humidity1 = response.list[6].main.humidity
+        var farenHeit1 = parseInt((temp1 - 273.15) * 1.80 + 32);
+        $("#temp-one").text("Temperature : " + farenHeit1);
+        $("#hum-one").text("Humidity : " + humidity1);
+
+        var temp2 = (response.list[14].main.temp);
+        var humidity2 = response.list[14].main.humidity
+        var farenHeit2 = parseInt((temp2 - 273.15) * 1.80 + 32);
+        $("#temp-two").text("Temperature : " + farenHeit2);
+        $("#hum-two").text("Humidity : " + humidity2);
+
+
+        var temp3 = (response.list[22].main.temp);
+        var humidity3 = response.list[22].main.humidity
+        var farenHeit3 = parseInt((temp3 - 273.15) * 1.80 + 32);
+        $("#temp-three").text("Temperature : " + farenHeit3);
+        $("#hum-three").text("Humidity : " + humidity3);
+
+
+        var temp4 = (response.list[30].main.temp);
+        var humidity4 = response.list[30].main.humidity
+        var farenHeit4 = parseInt((temp4 - 273.15) * 1.80 + 32);
+        $("#temp-four").text("Temperature : " + farenHeit4);
+        $("#hum-four").text("Humidity : " + humidity4);
+
+
+        var temp5 = (response.list[38].main.temp);
+        var humidity5 = response.list[38].main.humidity
+        var farenHeit5 = parseInt((temp5 - 273.15) * 1.80 + 32);
+        $("#temp-five").text("Temperature : " + farenHeit5);
+        $("#hum-five").text("Humidity : " + humidity5);
+
+
+        
+
+
+        
+      });
+
 </script>
  
 </body>
