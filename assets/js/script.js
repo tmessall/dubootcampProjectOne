@@ -10,6 +10,6 @@ $(document).ready(function () {
         localStorage.setItem("park", $("#speed option:selected").val());
         e.preventDefault();
         // Takes user to next page
-        // location.href="parks.html";
+        location.href="parks.html";
     });
 });
