@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>header demo</title>
+  <title>National Park's </title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  
   <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 </head>
 <body>
@@ -11,7 +12,7 @@
     <header class="head">  
         <div class ="row">
             <div class="col-8">
-                <h1> Nation Park Name  1</h1>
+                <h1 class="parkTitle"> Nation Park Name  1</h1>
                  <!-- <p>Contents 1</p> -->
             </div> 
             <div class="col-2">
@@ -19,7 +20,7 @@
             </div>
                  
             <div class="col-2">
-                <button>Weather</button>
+                <button id="weather-page">Weather</button>
                
              </div>
         </div>
@@ -28,13 +29,13 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-6">
-                <h1>place holder</h1>
-                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente blanditiis voluptate in facilis amet et totam nam non repudiandae quidem deleniti libero, id perspiciatis aspernatur ratione ad fugit modi maxime!</p>
+                <h1>Information</h1>
+                <p class = "info"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente blanditiis voluptate in facilis amet et totam nam non repudiandae quidem deleniti libero, id perspiciatis aspernatur ratione ad fugit modi maxime!</p>
 
             </div>
-            <div class="col-6">
-                <h1>place holder</h1>
-                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente blanditiis voluptate in facilis amet et totam nam non repudiandae quidem deleniti libero, id perspiciatis aspernatur ratione ad fugit modi maxime!</p>
+            <div class="col-6 parkImg">
+                <p class="caption"></p>
+
 
             </div>
 
@@ -47,7 +48,7 @@
 
 
 
-
+    <script src="assets/js/parks.js"></script>
 <script>
 $( "#head" ).css({ background: "#ccc", color: "blue" });
 </script>
