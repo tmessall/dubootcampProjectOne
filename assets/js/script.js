@@ -1,17 +1,29 @@
 $(document).ready(function () {
-    // Grabbing elements from html
-    var subBtn = $(".subBtn");
     
-    subBtn.on("click", function(e) {
+    $(".subBtn").on("click", function(e) {
         localStorage.setItem("park", $("#parks option:selected").val());
         e.preventDefault();
         // Takes user to next page
         location.href="parks.html";
     });
 
-    $(".img").click(function() {
+    // All show and hide functions come from jQuery UI
+    $("#show-button").hide();
+
+    $("#hide-button").click(function() {
         $(this).hide();
-        // $(this).effect("fade", {}, 2000);
+        $("#show-button").show();
+        for (var i = 0; i < 4; i++) {
+            $(`#${i}`).hide();
+        }
     });
+
+    $("#show-button").click(function() {
+        $("#hide-button").show();
+        for (var i = 0; i < 4; i++) {
+            $(`#${i}`).show();
+        }
+        $(this).hide();
+    })
      
 });
