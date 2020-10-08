@@ -1,0 +1,13 @@
+body{
+   background-color: darkcyan;
+}
+main{
+   padding: 25px;
+   text-align: center;
+}
+ul{
+   list-style-type: none;
+}
+.jumbotron{
+   background-color: grey;
+}
