@@ -8,4 +8,10 @@ $(document).ready(function () {
         // Takes user to next page
         location.href="parks.html";
     });
+
+    $(".img").click(function() {
+        $(this).hide();
+        // $(this).effect("fade", {}, 2000);
+    });
+     
 });
