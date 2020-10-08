@@ -26,7 +26,8 @@ $(document).ready(function() {
         $(".info").text(response.data[0].description);
         var imgTag = $("<img>").attr("src", response.data[0].images[0].url).attr("style", "width: 100%").addClass("mx-auto");
         $(".park-img").append(imgTag);
-        $(".caption").text(response.data[0].images[0].altText);
+        var pTag = $("<p>").addClass("caption").text(response.data[0].images[0].altText)
+        $(".park-img").append(pTag);
         
         
     });
