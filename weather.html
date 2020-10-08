@@ -149,7 +149,7 @@ $.ajax({
         var iconData1 = response.list[6].weather[0].icon;
         var img1 = $('<img />', { 
           id: 'weatherImg',
-          src: 'http://openweathermap.org/img/wn/' + iconData1 + '@2x.png',
+          src: 'https://openweathermap.org/img/wn/' + iconData1 + '@2x.png',
           alt: 'an image showing the weather'
         });
         img1.appendTo($('#weatherImg1'));
