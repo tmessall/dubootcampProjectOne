@@ -1,9 +1,8 @@
-<<<<<<< HEAD
 .jumbotron {
- background-image: url("../img/projectJumbotron.jpg");
+  background-image: url("assets/images/projectJumbotron.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-=======
+}
 .img{
     height: 300px;
     width: 315px;
@@ -21,5 +20,4 @@
     width: 100px;
     border: 1px solid black;
 
->>>>>>> main
 }
