@@ -1,5 +1,15 @@
+.title-area {
+    text-align: center;
+}
+
+.button-area {
+    text-align: right;
+}
+
 .park-img {
     outline: solid 1px blue;
+    padding: 0;
+    margin: 0;
 }
 
 .park-info {
