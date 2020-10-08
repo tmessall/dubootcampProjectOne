@@ -8,6 +8,6 @@ main{
 ul{
    list-style-type: none;
 }
-.jumbotron{
-   background-color: grey;
+.weatherContainer{
+   border-color: black;
 }
