@@ -8,6 +8,10 @@ main{
 ul{
    list-style-type: none;
 }
+header{
+   text-align: center;
+}
 .weatherContainer{
-   border-color: black;
+   border-style: inset;
+   border-color: grey;
 }
