@@ -1,11 +1,8 @@
 $(document).ready(function() {
-
     //global var
     //parkCode=park code for URL query 
     var parkCode = localStorage.getItem("park");
     var carousel = $(".carousel-inner");
-    
-    
     
     //guery URL and response 
     //// Here we construct our URL
@@ -18,6 +15,7 @@ $(document).ready(function() {
     }).then(function(response){
         $(".park-title").text(response.data[0].fullName);
         $(".info").text(response.data[0].description);
+        // Creates the pictures for the slideshow
         for (var i = 0; i < response.data[0].images.length; i++) {
             var divTag = $("<div>").addClass("carousel-item mx-auto");
             var imgTag = $("<img>").attr("src", response.data[0].images[i].url).addClass("d-block w-100");
@@ -29,12 +27,12 @@ $(document).ready(function() {
             }
             carousel.append(divTag);
         }
-
-        $('.carousel').carousel({interval: 1000000});
+        $('.carousel').carousel();
         
         
     });
     
+    // Buttons that link to other pages
     var weatherPage = $("#weather-page");    
     var parkPage = $("#park-page");
     
