@@ -8,7 +8,13 @@ Using HTML, CSS, Bootstrap, and Javascript, we created an application that allow
 
 ## Usage
 
-Select a park from the dropdown to view information and a picture. Hit the weather button on the information page to see weather for the area.
+Select a park from the dropdown to 
+![Home page](./assets/images/homePage.jpg)
+
+view information and a picture. Hit the weather button when you are ready to move on
+![Information page](./assets/images/parkInfo.jpg)
+Then youll be able to view the 5 day forecast. If you would like to look at another park click the 'Select ne park' button.
+![Weather page](./assets/images/weatherPage.jpg)
 
 ## Link to Application
 
