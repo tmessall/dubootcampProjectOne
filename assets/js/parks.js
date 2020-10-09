@@ -1,11 +1,8 @@
 $(document).ready(function() {
-
     //global var
     //parkCode=park code for URL query 
-    var parkCode=localStorage.getItem("park");
-    
-    
-    
+    var parkCode = localStorage.getItem("park");
+    var carousel = $(".carousel-inner");
     
     //guery URL and response 
     //// Here we construct our URL
@@ -16,22 +13,26 @@ $(document).ready(function() {
         url: queryURL,
         method: "GET"
     }).then(function(response){
-        console.log(response);
-        console.log(response.data[0].fullName);
-        console.log(response.data[0].description);
-        console.log(response.data[0].images[0].url);
-        console.log(response.data[0].images[0].altText);
-        
         $(".park-title").text(response.data[0].fullName);
         $(".info").text(response.data[0].description);
-        var imgTag = $("<img>").attr("src", response.data[0].images[0].url).attr("style", "width: 100%").addClass("mx-auto");
-        $(".park-img").append(imgTag);
-        var pTag = $("<p>").addClass("caption").text(response.data[0].images[0].altText)
-        $(".park-img").append(pTag);
+        // Creates the pictures for the slideshow
+        for (var i = 0; i < response.data[0].images.length; i++) {
+            var divTag = $("<div>").addClass("carousel-item mx-auto");
+            var imgTag = $("<img>").attr("src", response.data[0].images[i].url).addClass("d-block w-100");
+            divTag.append(imgTag);
+            var pTag = $("<p>").addClass("caption").text(response.data[0].images[i].altText)
+            divTag.append(pTag);
+            if (i == 0) {
+                divTag.addClass("active");
+            }
+            carousel.append(divTag);
+        }
+        $('.carousel').carousel();
         
         
     });
     
+    // Buttons that link to other pages
     var weatherPage = $("#weather-page");    
     var parkPage = $("#park-page");
     
