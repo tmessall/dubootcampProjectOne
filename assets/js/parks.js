@@ -17,7 +17,7 @@ $(document).ready(function() {
         $(".info").text(response.data[0].description);
         // Creates the pictures for the slideshow
         for (var i = 0; i < response.data[0].images.length; i++) {
-            var divTag = $("<div>").addClass("carousel-item mx-auto");
+            var divTag = $("<div>").addClass("carousel-item");
             var imgTag = $("<img>").attr("src", response.data[0].images[i].url).addClass("d-block w-100");
             divTag.append(imgTag);
             var pTag = $("<p>").addClass("caption").text(response.data[0].images[i].altText)
