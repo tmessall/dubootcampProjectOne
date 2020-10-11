@@ -3,22 +3,18 @@
   background-size: cover;
   background-repeat: no-repeat;
 }
+
 .img{
     height: 300px;
     width: 315px;
     object-fit: cover;
     align-content: center;
     padding: 5%;
-    
-    
-
 }
-
 
 .col-3{
     height: 300px;
     width: 100px;
     border: 1px solid black;
-
 }
 

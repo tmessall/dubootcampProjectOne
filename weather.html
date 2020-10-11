@@ -1,87 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>Weather</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
   <link rel="stylesheet" href="./assets/styles/weather.css">
   <link rel="stylesheet" href="assets/styles/style.css">
   <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 </head>
-<body class="mainDiv bg-cover" style="background-image: linear-gradient(to bottom, rgba(255,255,255,0.6) 0%,rgba(255,255,255,0.9) 100%), url(https://images.unsplash.com/photo-1444136755757-b24e7e5c4cd5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60)">
-<!-- Current Forecast -->
-<header>
-  <div class="jumbotron bg-cover text-white" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url(https://images.unsplash.com/photo-1444136755757-b24e7e5c4cd5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60)">
-    <div class="row">
-      <div class="col-lg-5">
-        <h1 class = "parkName"></h1> 
-        <h2 class="display-4"> Current Weather </h2>
+
+<body class="mainDiv bg-cover"
+  style="background-image: linear-gradient(to bottom, rgba(255,255,255,0.6) 0%,rgba(255,255,255,0.9) 100%), url(https://images.unsplash.com/photo-1444136755757-b24e7e5c4cd5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60)">
+  <!-- Current Forecast -->
+  <header>
+    <div class="jumbotron bg-cover text-white"
+      style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url(https://images.unsplash.com/photo-1444136755757-b24e7e5c4cd5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60)">
+      <div class="row">
+        <div class="col-lg-5">
+          <h1 class="parkName"></h1>
+          <h2 class="display-4"> Current Weather </h2>
+        </div>
+        <div class="col-lg-4">
+          <ul class="list-group list-group-flush">
+            <li id="temp"></li>
+            <li id="humidity"></li>
+          </ul>
+          <div id="weatherImg"></div>
+          <button id="park-page" class="btn btn-info">Select a new park</button>
+        </div>
+        <div class="col-lg-3"></div>
       </div>
-      <div class="col-lg-4">
-        <ul class="list-group list-group-flush">
-          <li id="temp"></li>
-          <li id="humidity"></li>
-        </ul>
-        <div id="weatherImg"></div>
-        <button id="park-page" class="btn btn-info">Select a new park</button>
+  </header>
+  <!-- Five Day Forecast -->
+  <main>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm weatherContainer" style="width: 18rem;">
+          <div class="card-one-header"> </div>
+          <ul class="list-group list-group-flush">
+            <li id="temp-one"></li>
+            <li id="hum-one"></li>
+          </ul>
+          <div id="weatherImg1"></div>
+        </div>
+        <div class="col-sm weatherContainer" style="width: 18rem;">
+          <div class="card-two-header"> </div>
+          <ul class="list-group list-group-flush">
+            <li id="temp-two"></li>
+            <li id="hum-two"></li>
+          </ul>
+          <div id="weatherImg2"></div>
+        </div>
+        <div class="col-sm weatherContainer" style="width: 18rem;">
+          <div class="card-three-header"> </div>
+          <ul class="list-group list-group-flush">
+            <li id="temp-three"></li>
+            <li id="hum-three"></li>
+          </ul>
+          <div id="weatherImg3"></div>
+        </div>
+        <div class="col-sm weatherContainer" style="width: 18rem;">
+          <div class="card-four-header"> </div>
+          <ul class="list-group list-group-flush">
+            <li id="temp-four"></li>
+            <li id="hum-four"></li>
+          </ul>
+          <div id="weatherImg4"></div>
+        </div>
+        <div class="col-sm weatherContainer" style="width: 18rem;">
+          <div class="card-five-header"> </div>
+          <ul class="list-group list-group-flush">
+            <li id="temp-five"></li>
+            <li id="hum-five"></li>
+          </ul>
+          <div id="weatherImg5"></div>
+        </div>
+      </div>
     </div>
-    <div class="col-lg-3"></div>
-  </div>
-</header>
-<!-- Five Day Forecast -->
-<main>
-  <div class ="container-fluid">
-    <div class="row">
-      <div class="col-sm weatherContainer" style="width: 18rem;">
-        <div class="card-one-header"> </div>
-        <ul class="list-group list-group-flush">
-          <li id="temp-one"></li>
-          <li id="hum-one"></li>
-        </ul>
-        <div id="weatherImg1"></div>
-      </div> 
-      <div class="col-sm weatherContainer" style="width: 18rem;">
-        <div class="card-two-header"> </div>
-        <ul class="list-group list-group-flush">
-          <li id="temp-two"></li>
-          <li id="hum-two"></li>
-        </ul>
-        <div id="weatherImg2"></div>
-      </div>
-      <div class="col-sm weatherContainer" style="width: 18rem;">
-        <div class="card-three-header"> </div>
-        <ul class="list-group list-group-flush">
-          <li id="temp-three"></li>
-          <li id="hum-three"></li>
-        </ul>
-        <div id="weatherImg3"></div>
-      </div>
-      <div class="col-sm weatherContainer" style="width: 18rem;">
-        <div class="card-four-header"> </div>
-        <ul class="list-group list-group-flush">
-          <li id="temp-four"></li>
-          <li id="hum-four"></li>
-        </ul>
-        <div id="weatherImg4"></div>
-      </div>
-      <div class="col-sm weatherContainer" style="width: 18rem;">
-        <div class="card-five-header"> </div>
-        <ul class="list-group list-group-flush">
-          <li id="temp-five"></li>
-          <li id="hum-five"></li>
-        </ul>
-        <div id="weatherImg5"></div>
-      </div>
-    </div>
-  </div>
-</main>
- 
+  </main>
 
 
 
 
-<script src="assets/js/weather.js">
-$( "#head" ).css({ background: "#ccc", color: "blue" });
-</script>
+
+  <script src="assets/js/weather.js">
+    $("#head").css({ background: "#ccc", color: "blue" });
+  </script>
 </body>
+
 </html>

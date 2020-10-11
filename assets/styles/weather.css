@@ -1,17 +1,21 @@
-body{
+body {
    background-color: darkcyan;
 }
-main{
+
+main {
    padding: 25px;
    text-align: center;
 }
-ul{
+
+ul {
    list-style-type: none;
 }
-header{
+
+header {
    text-align: center;
 }
-.weatherContainer{
+
+.weatherContainer {
    border-style: inset;
    border-color: grey;
 }
